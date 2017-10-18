@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="css/style.css" rel="stylesheet">
+    <title>Register</title>
+
+    <!--Import jQuery before materialize.js-->
+
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    
+      <script type="text/javascript">
+  
+function _(id){ return document.getElementById(id); }
+
+function submitForm(){
+	_("mybtn").disabled = true;
+	_("status").innerHTML = 'Please Wait ...';
+	var formdata = new FormData();
+	formdata.append( "fname", _("fname").value );
+	formdata.append( "pass", _("pass").value );
+	formdata.append( "email", _("email").value );
+        formdata.append( "phone", _("phone").value );
+	var ajax = new XMLHttpRequest();
+	ajax.open( "POST", "http://nmitd.000webhostapp.com/app_register.php" );
+	ajax.onreadystatechange = function() {
+		if(ajax.readyState == 4 && ajax.status == 200) {
+			if(ajax.responseText == "success"){
+				_("my_form").innerHTML = '<h4>Thanks '+_("fname").value+', You Succesfully Registered</h4><br><a href="home.html">Explore App</a>';
+                                
+            } else {
+				_("status").innerHTML = ajax.responseText;
+				_("mybtn").disabled = false;
+			}
+		}
+	}
+	ajax.send( formdata );
+}
+
+  </script>
+
+      
+  </head>
+
+  <body class="scroll-y">
+
+    <div class="container-fluild">
+
+  <nav class="nav-extended">
+     <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Registration</a>
+      <a href="index.html"><i class="material-icons">arrow_back</i></a>
+    </div>
+   </nav>      
+   
+    <br>
+        
+  <div class="chip">
+    Make Sure Your Internet Connection Is Working.
+    <i class="close material-icons">close</i>
+  </div>
+  <div class="chip">
+    Fill Out A Form Ones.
+    <i class="close material-icons">close</i>
+  </div>      
+        
+        
+  <div class="row">
+    <form class="col s12" id="my_form" onsubmit="submitForm(); return false;">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="fname" type="text" class="validate" required pattern="[A-Za-z]{1,32}" title="Make Sure Your Name Spelling is Correct">
+          <label for="icon_prefix">FirstnameSurname</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">vpn_key</i>
+          <input id="pass" type="text" class="validate" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Password Must Contain UpperCase, LowerCase and Number">
+          <label for="icon_telephone">Password</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <input id="email" type="email" class="validate" required>
+          <label for="icon_telephone">Email Id</label>
+        </div>
+         <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <input id="phone" type="tel" class="validate" required title="Invalid Phone Number" pattern="[789][0-9]{9}">
+          <label for="icon_telephone">Mobile Number</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="submit" value="Register" id="mybtn" class="btn waves-effect waves-light"> 
+        </div>
+        <div class="input-field col s12">
+          <span id="status"></span> 
+        </div>  
+      </div>
+    </form>
+  </div>
+      
+  </div><!--main container close-->
+
+
+
+
+
+
+  
+
+
+
+</body>
+</html>

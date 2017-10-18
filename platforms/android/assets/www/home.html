@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="css/style.css" rel="stylesheet">
+    <title>NMITD</title>
+
+    <!--Import jQuery before materialize.js-->
+
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  
+    <script type="text/javascript" charset="utf-8">
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+   var ref = window.open('http://nmitd.000webhostapp.com/commentlogin.html', '_blank', 'location=yes');
+}
+
+</script>
+
+  </head>
+
+  <body class="scroll-y">
+
+    <div class="container-fluild">
+
+       <nav class="nav-extended">
+         <div class="nav-wrapper">
+           <a href="" class="brand-logo">NMITD</a>
+           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          
+           <ul class="side-nav" id="mobile-demo">
+             <li><div class="userView">
+                   <div class="background">
+                        <img src="img/bg1.jpg" style="height:100vh;">
+                  </div>
+                  <a href="#"><img class="circle" src="img/userdef.png"></a>
+                  <a href="#"><span class="white-text name">Guest</span></a>
+                  <a href="#"><span class="white-text email">guest.welcome@nmitd.com</span></a>
+            </div></li>
+             <li><a href="home.html"><i class="material-icons">home</i>Home</a></li>
+             <li><a href="courses.html"><i class="material-icons">account_balance</i>Course</a></li>
+             <li><a href="gallery.html"><i class="material-icons">collections</i>NMITD Gallary</a></li>
+             <li><a href="life.html"><i class="material-icons">favorite_border</i>Life@NMITD</a></li>
+             <li><a href="contact_us.html"><i class="material-icons">turned_in</i>Contact Us</a></li>
+             <li><a href="about_dev.html"><i class="material-icons">bug_report</i>About Developer</a></li>
+             
+           </ul>
+         </div>
+
+       </nav><!--Navabar close-->
+       
+       
+       <div class="card" style="top:-14px;">
+          <a href="courses.html"><div class="card-image waves-effect waves-block waves-light si-homeimg">
+          <img class="activator" src="img/course.jpg" style="height: 180px;width:100vw">
+          <div class="windows"></div>
+          <h3 class="c-title">Course</h3></a>
+          </div>
+       </div>         
+
+       <div class="card" style="top:-28px;">
+        <a href="life.html"><div class="card-image waves-effect waves-block waves-light si-homeimg">
+          <img class="activator" src="img/life.jpg" style="height: 180px;width:100vw">
+          <div class="windows"></div>
+          <h3 class="c-title">Life@NMITD</h3></a>
+          </div>
+       </div>         
+       
+       <div class="card" style="top:-42px;">
+         <a href="gallery.html"><div class="card-image waves-effect waves-block waves-light si-homeimg">
+          <img class="activator" src="img/gallery.jpg" style="height: 180px;width:100vw">
+          <div class="windows"></div>
+          <h3 class="c-title">Image Gallery</h3></a>
+          </div>
+       </div>         
+       
+       <div class="card" style="top:-56px;">
+         <a href="vid_gallery.html"><div class="card-image waves-effect waves-block waves-light si-homeimg">
+          <img class="activator" src="img/video.jpg" style="height: 180px;width:100vw">
+          <div class="windows"></div>
+          <h3 class="c-title">Video Gallery</h3></a>
+          </div>
+       </div>   
+        <div class="card" style="top:-70px;">
+         <a href="notice.html"><div class="card-image waves-effect waves-block waves-light si-homeimg">
+          <img class="activator" src="img/notice.jpg" style="height: 180px;width:100vw">
+          <div class="windows"></div>
+          <h3 class="c-title">Notice Board</h3></a>
+          </div>
+       </div>   
+        <div class="card" style="top:-85px;">
+            <a onclick="onDeviceReady();"> <div class="card-image waves-effect waves-block waves-light si-homeimg">
+          <img class="activator" src="img/notice.jpg" style="height: 180px;width:100vw">
+          <div class="windows"></div>
+          <h3 class="c-title">Helping Hand</h3></a>
+          </div>
+       </div>   
+
+
+      
+  </div><!--main container close-->
+
+
+
+
+   <script type="text/javascript" src="js/index.js"></script>
+
+
+
+</body>
+</html>
